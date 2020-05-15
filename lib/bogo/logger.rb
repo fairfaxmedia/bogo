@@ -58,7 +58,6 @@ module Bogo
     def named(name)
       new_name = self.progname.to_s
       new_name << "." unless new_name.empty?
-      new_name << name
       new_logger = Logger.new(*@base_args)
       [:level, :formatter, :datetime_format].each do |m|
         new_logger.send("#{m}=", self.send(m))
